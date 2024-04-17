@@ -1,0 +1,119 @@
+﻿@model IEnumerable<clinicPractice.Models.Member_EmployeeList>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Staff_Number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Blood_Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.National_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contact_Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Birth_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Emp_Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Department)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Emp_Password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmpPhoto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmpMail)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Staff_Number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Blood_Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.National_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contact_Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Birth_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Emp_Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Department)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Emp_Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpPhoto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpMail)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Emp_ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Emp_ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Emp_ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
