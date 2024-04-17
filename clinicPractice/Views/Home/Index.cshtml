@@ -1,8 +1,8 @@
-﻿ @model IEnumerable<clinicPractice.Models.Member_EmployeeList> 
+﻿@*  @model IEnumerable<clinicPractice.Models.Member_EmployeeList>  *@
 @*@model clinicPractice.Models.Member_EmployeeList*@
 
 
-@{
+@* @{
     ViewData["Title"] = "Home Page";
 }
 
@@ -11,6 +11,66 @@
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 
-
+ *@
 @* <p>@Model.Emp_ID</p> *@
 
+@* @model List<clinicPractice.Models.Member_EmployeeList> *@
+    @model clinicPractice.Models.EMPViewModel
+<form asp-controller="home" asp-action="emptype" method="post">
+    <label for="employeeType">選擇員工類型：</label>
+    <select id="employeeType" name="selectedEmployeeType">
+        <option value="醫生">醫生</option>
+        <option value="護士">護士</option>
+        <option value="藥師">藥師</option>
+    </select>
+
+    <label for="memberType">會員類型：</label>
+    <select id="memberType" name="SelectedMemberType">
+        <option value="台北">台北</option>
+        <option value="台中">台中</option>
+        <option value="台南">台南</option>
+    </select>
+    <button type="submit">搜尋</button>
+
+
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <th>員工編號</th>
+            <th>姓名</th>
+            <!-- 其他列 -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in Model.Employees)
+        {
+            <tr>
+                <td>@employee.Staff_Number</td>
+                <td>@employee.Name</td>
+                <!-- 其他列 -->
+            </tr>
+        }
+    </tbody>
+</table>
+
+<table>
+    <thead>
+        <tr>
+            <th>會員編號</th>
+            <th>姓名</th>
+            <!-- 其他列 -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var member in Model.Members)
+        {
+            <tr>
+                <td>@member.Member_ID</td>
+                <td>@member.Name</td>
+                <!-- 其他列 -->
+            </tr>
+        }
+    </tbody>
+</table>
